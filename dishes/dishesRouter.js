@@ -33,3 +33,5 @@ router.post("/", (req, res) => {
     res.status(400).json({ message: "Please provide a name for your dish!" });
   }
 });
+
+module.exports = router;
