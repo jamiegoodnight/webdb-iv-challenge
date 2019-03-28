@@ -24,6 +24,14 @@ function addDish(dish) {
     });
 }
 
-function getDish(dishId) {
-  return db("recipes").where({ dish_id: dishId });
+function getDish(id) {
+  return db("dishes")
+    .innerJoin("recipes", "recipes.dish_id", "dishes.id")
+    .select({
+      dish: "dishes.Name",
+      recipe: "recipes.Name",
+      recipe_id: "recipes.id",
+      id: "dishes.id"
+    })
+    .where({ "dishes.id": id });
 }

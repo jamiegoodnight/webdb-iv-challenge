@@ -6,7 +6,14 @@ module.exports = {
 };
 
 function getRecipes() {
-  return db("recipes");
+  return db("recipes")
+    .innerJoin("dishes", "recipes.dish_id", "dishes.id")
+    .select({
+      dish: "dishes.Name",
+      recipe: "recipes.Name",
+      dish_id: "recipes.dish_id",
+      id: "recipes.id"
+    });
 }
 
 function getRecipeById(id) {
