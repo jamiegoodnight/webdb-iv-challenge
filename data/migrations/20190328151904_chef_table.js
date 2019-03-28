@@ -18,7 +18,7 @@ exports.up = function(knex, Promise) {
         .unsigned()
         .notNullable()
         .references("id")
-        .inTable("tracks")
+        .inTable("dishes")
         .onDelete("CASCADE")
         .onUpdate("CASCADE");
     })
@@ -33,7 +33,7 @@ exports.up = function(knex, Promise) {
         .unsigned()
         .notNullable()
         .references("id")
-        .inTable("cohorts")
+        .inTable("recipes")
         .onDelete("CASCADE")
         .onUpdate("CASCADE");
       tbl
@@ -41,7 +41,7 @@ exports.up = function(knex, Promise) {
         .unsigned()
         .notNullable()
         .references("id")
-        .inTable("students")
+        .inTable("ingredients")
         .onDelete("CASCADE")
         .onUpdate("CASCADE");
       tbl
