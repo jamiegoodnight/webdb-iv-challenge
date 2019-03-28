@@ -1,5 +1,5 @@
 exports.seed = function(knex, Promise) {
-  return knex("cohorts").insert([
+  return knex("recipes").insert([
     { name: "New York Style Pizza", dish_id: 1 }, // 1
     { name: "Cheese Pizza", dish_id: 1 }, // 2
     { name: "Sausage Pizza", dish_id: 1 }, // 3
